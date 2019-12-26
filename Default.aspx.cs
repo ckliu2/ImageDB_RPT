@@ -320,6 +320,16 @@ public partial class _Default : System.Web.UI.Page
                     report.SetParameterValue("constructionId", Request["constructionId"] );                    
                 break;
                 
+                 case 37:
+                    rptFile = this.Server.MapPath("rpt/QuotedPriceProduceClass3SUM.rpt");
+                    report.Load(rptFile);                    
+                    report.SetDatabaseLogon(UserID, UserPassword, DBIP, "ImageDB");
+                    report.SetParameterValue("id", Request["quotedPrice"] );
+                    saveDisk1(report, "QuotedPrice-"+ Request["quotedPrice"]+"-"+randomId);               
+                break;
+                
+                
+                
             }
            
             CrystalReportViewer1.ReportSource = report;
