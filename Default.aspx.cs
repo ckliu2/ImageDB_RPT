@@ -58,7 +58,7 @@ public partial class _Default : System.Web.UI.Page
                     report.Load(rptFile);                    
                     report.SetDatabaseLogon(UserID, UserPassword, DBIP, "ImageDB");
                     report.SetParameterValue("id", Request["id"] );                     
-                    //saveDisk1(report, "PurchaseList");    
+                    saveDisk1(report, "PurchaseList");    
                  break;
                 
                 
@@ -361,9 +361,6 @@ public partial class _Default : System.Web.UI.Page
     {       
                     
                 System.IO.Stream stream1 = report.ExportToStream(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat);
-                //byte[] bytes1 = new byte[stream1.Length];
-                //stream1.Read(bytes1, 0, bytes1.Length);
-                //stream1.Seek(0, System.IO.SeekOrigin.Begin);                
                 SaveStreamToFile(onlinePDF+"\\"+fileName+".pdf", stream1);
     }
     
