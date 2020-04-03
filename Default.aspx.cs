@@ -320,7 +320,7 @@ public partial class _Default : System.Web.UI.Page
                     report.SetParameterValue("constructionId", Request["constructionId"] );                    
                 break;
                 
-                 case 37:
+                case 37:
                     rptFile = this.Server.MapPath("rpt/QuotedPriceProduceClass3SUM.rpt");
                     report.Load(rptFile);                    
                     report.SetDatabaseLogon(UserID, UserPassword, DBIP, "ImageDB");
@@ -328,6 +328,33 @@ public partial class _Default : System.Web.UI.Page
                     saveDisk1(report, "QuotedPrice-"+ Request["quotedPrice"]+"-"+randomId);               
                 break;
                 
+                case 38:
+                    rptFile = this.Server.MapPath("rpt/applicationForConstruction2.rpt");
+                    report.Load(rptFile);                    
+                    report.SetDatabaseLogon(UserID, UserPassword, DBIP, "ImageDB");
+                    report.SetParameterValue("id", Request["id"] );                  
+                break;
+                
+                 case 39:
+                    rptFile = this.Server.MapPath("rpt/applicationForConstruction1.rpt");
+                    report.Load(rptFile);                    
+                    report.SetDatabaseLogon(UserID, UserPassword, DBIP, "ImageDB");
+                    report.SetParameterValue("id", Request["id"] );
+                break;
+                
+                case 40:
+                    rptFile = this.Server.MapPath("rpt/quotedPriceCustomerList.rpt");
+                    report.Load(rptFile);                    
+                    report.SetDatabaseLogon(UserID, UserPassword, DBIP, "ImageDB");
+                    report.SetParameterValue("startDate", Request["startDate"] );
+                    report.SetParameterValue("endDate", Request["endDate"] );
+                    report.SetParameterValue("produce", Request["produce"] );
+                    report.SetParameterValue("caseClosed", Request["caseClosed"] );
+                    report.SetParameterValue("customerName", Request["customerName"] );
+                    report.SetParameterValue("salemanName", Request["salemanName"] );
+                    
+                    saveDisk1(report, randomId);               
+                break;
                 
                 
             }
