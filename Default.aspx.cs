@@ -335,7 +335,7 @@ public partial class _Default : System.Web.UI.Page
                     report.SetParameterValue("id", Request["id"] );                  
                 break;
                 
-                 case 39:
+               case 39:
                     rptFile = this.Server.MapPath("rpt/applicationForConstruction1.rpt");
                     report.Load(rptFile);                    
                     report.SetDatabaseLogon(UserID, UserPassword, DBIP, "ImageDB");
@@ -367,6 +367,13 @@ public partial class _Default : System.Web.UI.Page
                     report.SetParameterValue("salemanName", Request["salemanName"] );
                     saveDisk1(report, randomId);    
                 break;
+                
+                case 42:
+                    rptFile = this.Server.MapPath("rpt/ProductApply.rpt");
+                    report.Load(rptFile);                    
+                    report.SetDatabaseLogon(UserID, UserPassword, DBIP, "ImageDB");
+                    report.SetParameterValue("id", Request["id"] );
+                 break;
                 
                 
             }
