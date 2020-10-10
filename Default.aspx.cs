@@ -375,6 +375,12 @@ public partial class _Default : System.Web.UI.Page
                     report.SetParameterValue("id", Request["id"] );
                  break;
                 
+                case 43:
+                    rptFile = this.Server.MapPath("rpt/QuotedPriceWork.rpt");
+                    report.Load(rptFile);                    
+                    report.SetDatabaseLogon(UserID, UserPassword, DBIP, "ImageDB");
+                    report.SetParameterValue("id", Request["id"] ); 
+                 break;
                 
             }
            
