@@ -382,20 +382,30 @@ public partial class _Default : System.Web.UI.Page
                     report.SetParameterValue("id", Request["id"] ); 
                  break;
 				 
-				 case 44:
+				        case 44:
                     rptFile = this.Server.MapPath("rpt/ProductApply1.rpt");
                     report.Load(rptFile);                    
                     report.SetDatabaseLogon(UserID, UserPassword, DBIP, "ImageDB");
-					report.SetParameterValue("startDate", Request["startDate"] );
-					report.SetParameterValue("endDate", Request["endDate"] );
+					          report.SetParameterValue("startDate", Request["startDate"] );
+					          report.SetParameterValue("endDate", Request["endDate"] );
                  break;
 				 
-				 case 45:
+				         case 45:
                     rptFile = this.Server.MapPath("rpt/QuotedPriceWorkStep3.rpt");
                     report.Load(rptFile);                    
                     report.SetDatabaseLogon(UserID, UserPassword, DBIP, "ImageDB");
                     report.SetParameterValue("id", Request["id"] ); 
                  break;
+                 
+                  case 46:
+                    rptFile = this.Server.MapPath("rpt/quotedPriceCustomerSalesManList.rpt");
+                    report.Load(rptFile);                    
+                    report.SetDatabaseLogon(UserID, UserPassword, DBIP, "ImageDB");
+                    report.SetParameterValue("startDate", Request["startDate"] );
+                    report.SetParameterValue("endDate", Request["endDate"] );
+                    
+                    saveDisk1(report, randomId);    
+                break;
                 
             }
            
