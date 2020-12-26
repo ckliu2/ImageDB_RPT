@@ -361,8 +361,7 @@ public partial class _Default : System.Web.UI.Page
                     report.SetDatabaseLogon(UserID, UserPassword, DBIP, "ImageDB");
                     report.SetParameterValue("startDate", Request["startDate"] );
                     report.SetParameterValue("endDate", Request["endDate"] );
-                    report.SetParameterValue("produce", Request["produce"] );
-                    report.SetParameterValue("caseClosed", Request["caseClosed"] );
+                    report.SetParameterValue("produce", Request["produce"] ); 
                     report.SetParameterValue("customerName", Request["customerName"] );
                     report.SetParameterValue("salemanName", Request["salemanName"] );
                     saveDisk1(report, randomId);    
