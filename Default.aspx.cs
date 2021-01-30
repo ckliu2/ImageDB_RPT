@@ -409,6 +409,12 @@ public partial class _Default : System.Web.UI.Page
                     saveDisk1(report, randomId);    
                 break;
                 
+                case 47:
+                    rptFile = this.Server.MapPath("rpt/constructionFeeMasterList.rpt");
+                    report.Load(rptFile);                    
+                    report.SetDatabaseLogon(UserID, UserPassword, DBIP, "ImageDB"); 
+                 break;
+                
             }
            
             CrystalReportViewer1.ReportSource = report;
