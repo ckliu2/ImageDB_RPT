@@ -413,6 +413,10 @@ public partial class _Default : System.Web.UI.Page
                     rptFile = this.Server.MapPath("rpt/constructionFeeMasterList.rpt");
                     report.Load(rptFile);                    
                     report.SetDatabaseLogon(UserID, UserPassword, DBIP, "ImageDB"); 
+                    report.SetParameterValue("startDate", Request["startDate"] );
+                    report.SetParameterValue("endDate", Request["endDate"] );
+                    report.SetParameterValue("sprint", Request["sprint"] );
+                    report.SetParameterValue("dateType", Request["dateType"] );
                  break;
                 
             }
