@@ -418,6 +418,16 @@ public partial class _Default : System.Web.UI.Page
                     report.SetParameterValue("sprint", Request["sprint"] );
                     report.SetParameterValue("dateType", Request["dateType"] );
                  break;
+                 
+                 case 48:
+                    rptFile = this.Server.MapPath("rpt/constructionFeeMaster.rpt");
+                    report.Load(rptFile);                    
+                    report.SetDatabaseLogon(UserID, UserPassword, DBIP, "ImageDB"); 
+                    report.SetParameterValue("startDate", Request["startDate"] );
+                    report.SetParameterValue("endDate", Request["endDate"] );
+                    report.SetParameterValue("sprint", Request["sprint"] );
+                    report.SetParameterValue("dateType", Request["dateType"] );
+                 break;
                 
             }
            
