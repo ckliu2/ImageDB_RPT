@@ -352,7 +352,7 @@ public partial class _Default : System.Web.UI.Page
                     report.SetParameterValue("caseClosed", Request["caseClosed"] );
                     report.SetParameterValue("customerName", Request["customerName"] );
                     report.SetParameterValue("salemanName", Request["salemanName"] );
-                    report.SetParameterValue("srctypeId", Request["srctypeId"] );
+                    report.SetParameterValue("srctypeId", "" );
                     report.SetParameterValue("dateType", Request["dateType"] ); 
                     
                     saveDisk1(report, randomId);               
