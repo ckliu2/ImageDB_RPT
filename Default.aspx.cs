@@ -428,6 +428,13 @@ public partial class _Default : System.Web.UI.Page
                     report.SetParameterValue("sprint", Request["sprint"] );
                     report.SetParameterValue("dateType", Request["dateType"] );
                  break;
+                 
+                 case 49:
+                    rptFile = this.Server.MapPath("rpt/ProductApplys.rpt");
+                    report.Load(rptFile);                    
+                    report.SetDatabaseLogon(UserID, UserPassword, DBIP, "ImageDB");
+                    report.SetParameterValue("ids", Request["ids"] );
+                 break;
                 
             }
            
