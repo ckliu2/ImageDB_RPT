@@ -435,6 +435,13 @@ public partial class _Default : System.Web.UI.Page
                     report.SetDatabaseLogon(UserID, UserPassword, DBIP, "ImageDB");
                     report.SetParameterValue("ids", Request["ids"] );
                  break;
+                 
+                 case 50:
+                    rptFile = this.Server.MapPath("rpt/BuyProductApplys.rpt");
+                    report.Load(rptFile);                    
+                    report.SetDatabaseLogon(UserID, UserPassword, DBIP, "ImageDB");
+                    report.SetParameterValue("ids", Request["ids"] );
+                 break;
                 
             }
            
