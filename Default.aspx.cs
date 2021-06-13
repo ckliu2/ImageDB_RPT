@@ -442,6 +442,14 @@ public partial class _Default : System.Web.UI.Page
                     report.SetDatabaseLogon(UserID, UserPassword, DBIP, "ImageDB");
                     report.SetParameterValue("ids", Request["ids"] );
                  break;
+                 
+                 case 51:
+                    rptFile = this.Server.MapPath("rpt/ValuationAreaList.rpt");
+                    report.Load(rptFile);                    
+                    report.SetDatabaseLogon(UserID, UserPassword, DBIP, "ImageDB");
+                    report.SetParameterValue("id", Request["id"] );
+                    saveDisk1(report, "QuotedPrice-"+ Request["id"]+"-"+randomId);
+                 break;
                 
             }
            
